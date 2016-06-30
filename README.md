@@ -1,1 +1,1 @@
-welcome to  Ed's blog,u can click [here](http://www.cnedwan.com)
+welcome to  Steven Wang's world,u can click [here](http://steven.wang)

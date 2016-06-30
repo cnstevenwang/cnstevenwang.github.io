@@ -66,7 +66,7 @@ author:
   name             : "Steven Wang"
   avatar           : "bio-photo.jpg"
   bio              : "Someone, who wants to be a simple and peaceful man."
-  location         : "Shanghai"
+  location         : "Shanghai, China"
   email            :
   uri              :
   bitbucket        :
@@ -206,3 +206,24 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+# default setting for site
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true

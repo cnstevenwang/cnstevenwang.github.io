@@ -1,10 +1,10 @@
-title: Long Haul
-description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+title: Steven Wang`s World | A simple and peaceful boy
+description: Someone who wants to be a simple and peaceful boy.
 
 url: "http://steven.wang"
 baseurl: ""
 paginate_path: "blog/page:num/"
-permalink: blog/:title/
+permalink: blog/:year/:month/:day/:title/
 
 markdown: kramdown
 highlighter: rouge
@@ -20,9 +20,12 @@ navigation:
    url: /contact
 
 social:
-   github: brianmaierjr
-   twitter: brianmaierjr
-   facebook: brianmaierjr
-   email: brimaidesigns@gmail.com
+   github: cnstevenwang
 
-google_analytics: "UA-58263416-1"
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

@@ -3,14 +3,14 @@ markdown: redcarpet
 highlighter: pygments
 
 # Site settings
-title: "Ed`s Home - 分享技术感悟生活 "
+title: "Steven Wang`s World - 记录思考 "
 description: ""
-email: 312338568@qq.com
+email: 281583051@qq.com
 logo: "/assets/images/ed_logo.png"
 cover: "/assets/images/desktop.png "
-wechat: "微信公众号:edwan"
-name: 'Xsu Edwan'
-author: 'Xsu Edwan'
+wechat: "微信:oulaoula"
+name: 'Steven Wang'
+author: 'Steven Wang'
 author_image: "/assets/images/author.png"
 paginate:	15
 url: "http://cnedwan.com" # the base hostname & protocol for your site
@@ -19,19 +19,12 @@ baseurl: ""
 # social icons and sharing options
 social:
   - icon:	weibo
-    url:	http://weibo.com/xhmaster
+    url:	http://weibo.com/netols
     desc: Connect with me weibo
 
   - icon:	github
-    url:	https://github.com/xuheng
+    url:	https://github.com/cnstevenwang
     desc:	Fork me on github
-
-  - icon:	twitter
-    url:	https://twitter.com/CnEdwan
-    desc: Follow me on twitter
-    share_url: http://twitter.com/share
-    share_title: ?text=
-    share_link: "&amp;url="
 
 comments :
 provider : duoshuo

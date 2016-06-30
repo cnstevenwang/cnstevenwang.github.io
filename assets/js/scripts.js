@@ -1,5 +1,5 @@
 // A $( document ).ready() block.
-$( document ).ready(function() {
+$(document).ready(function() {
 
 	// DropCap.js
 	var dropcaps = document.querySelectorAll(".dropcap");

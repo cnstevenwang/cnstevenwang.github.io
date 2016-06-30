@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "zh-CN"
-title                    : "Steven Wang's World | 技术点滴生活点滴"
+title                    : "Steven Wang's World"
 title_separator          : "-"
 name                     : "Steven Wang"
 description              : "Steven Wang's World"
@@ -75,7 +75,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "https://github.com/cnstevenwang"
   google_plus      :
   keybase          :
   instagram        :

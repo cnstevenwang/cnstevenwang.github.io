@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "zh-CN"
-title                    : "Steven Wang's World"
+title                    : "Steven Wang`s World"
 title_separator          : "-"
 name                     : "Steven Wang"
-description              : "Steven Wang's World"
+description              : "Steven Wang`s World"
 url                      : "http://steven.wang" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :

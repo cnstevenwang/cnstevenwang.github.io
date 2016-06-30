@@ -20,8 +20,10 @@ navigation:
  - title: Contact
    url: /contact
 
-social:
-   github: cnstevenwang
+author:
+  name: Steven Wang
+  social:
+    github: cnstevenwang
 
 defaults:
   -

@@ -30,3 +30,12 @@ comments :
 provider : duoshuo
 duoshuo :
     short_name : StevenWang
+
+# default settings
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

@@ -1,6 +1,6 @@
 # Build settings
-markdown: redcarpet
-highlighter: pygments
+markdown: kramdown
+highlighter: rouge
 
 # Site settings
 title: "Steven Wang`s World - 记录 | 思考 "

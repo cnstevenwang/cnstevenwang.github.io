@@ -1,5 +1,4 @@
 ---
-categories:[文档 架构]
 tags: [文档 架构]
 layout: post
 ---

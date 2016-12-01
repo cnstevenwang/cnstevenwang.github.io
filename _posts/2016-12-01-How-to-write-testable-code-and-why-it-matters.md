@@ -10,6 +10,7 @@ A unit test can verify different behavioral aspects of the system under test, bu
 
 As a metaphor for a proper unit test, imagine a mad scientist who wants to build some supernatural chimera, with frog legs, octopus tentacles, bird wings, and a dog’s head. (This metaphor is pretty close to what programmers actually do at work). How would that scientist make sure that every part (or unit) he picked actually works? Well, he can take, let’s say, a single frog’s leg, apply an electrical stimulus to it, and check for proper muscle contraction. What he is doing is essentially the same Arrange-Act-Assert steps of the unit test; the only difference is that, in this case, unit refers to a physical object, not to an abstract object we build our programs from.  
 ![](/assets/articles/how-to-write-testable-code-and-why-it-matters/2.jpg)   
+
 > I will use C# for all examples in this article, but the concepts described apply to all object-oriented programming languages.
 
 A simple unit test could look like this:  
@@ -327,6 +328,7 @@ Indeed, let’s suppose that the motion sensor, backyard lantern, and smart home
 As we can see, unit testing side-effecting methods could be as hard as unit testing non-deterministic ones, and may even be impossible. Any attempt will lead to problems similar to those we’ve already seen. The resulting test will be hard to implement, unreliable, potentially slow, and not-really-unit. And, after all that, the flashing of the light every time we run the test suite will eventually drive us crazy!
 
 Again, all these testability problems are caused by the bad API, not the developer’s ability to write unit tests. No matter how exactly light control is implemented, the SmartHomeController API suffers from these already-familiar issues:  
+
 + **It is tightly coupled to the concrete implementation**. The API relies on the hard-coded, concrete instance of BackyardLightSwitcher. It is not possible to reuse the ActuateLights(bool motionDetected) method to switch any light other than the one in the backyard.
 + **It violates the Single Responsibility Principle**. The API has two reasons to change: First, changes to the internal logic (such as choosing to make the light turn on only at night, but not in the evening) and second, if the light-switching mechanism is replaced with another one.
 + **It lies about its dependencies**. There is no way for developers to know that SmartHomeController depends on the hard-coded BackyardLightSwitcher component, other than digging into the source code.

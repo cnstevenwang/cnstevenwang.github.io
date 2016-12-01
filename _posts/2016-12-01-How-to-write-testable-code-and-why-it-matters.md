@@ -13,6 +13,7 @@ As a metaphor for a proper unit test, imagine a mad scientist who wants to build
 >I will use C# for all examples in this article, but the concepts described apply to all object-oriented programming languages.
 
 A simple unit test could look like this:  
+
 ```
 [TestMethod]
 public void IsPalindrome_ForPalindromeString_ReturnsTrue()
@@ -317,7 +318,7 @@ public void ActuateLights(bool motionDetected, Action turnOn, Action turnOff)
 ```  
 This is a more functional-flavored solution than the classic object-oriented Dependency Injection approach we’ve seen before; however, it lets us achieve the same result with less code, and more expressiveness, than Dependency Injection. It is no longer necessary to implement a class that conforms to an interface in order to supply SmartHomeController with the required functionality; instead, we can just pass a function definition. Higher-order functions can be thought of as another way of implementing Inversion of Control.
 
-Now, to perform an interaction-based unit test of the resulting method, we can pass easily verifiable fake actions into it:
+Now, to perform an interaction-based unit test of the resulting method, we can pass easily verifiable fake actions into it:  
 
 ```
 [TestMethod]
@@ -335,7 +336,7 @@ public void ActuateLights_MotionDetectedAtNight_TurnsOnTheLight()
     // Assert
     Assert.IsTrue(turnedOn);
 }
-```
+```  
 Finally, we have made the SmartHomeController API fully testable, and we are able to perform both state-based and interaction-based unit tests for it. Again, notice that in addition to improved testability, introducing a seam between the decision-making and action code helped to solve the tight coupling problem, and led to a cleaner, reusable API.
 
 Now, in order to achieve full unit test coverage, we can simply implement a bunch of similar-looking tests to validate all possible cases — not a big deal since unit tests are now quite easy to implement.
@@ -357,21 +358,21 @@ Finally, let’s review some common warning signs indicating that our code might
 ## Static Properties and Fields
 Static properties and fields or, simply put, global state, can complicate code comprehension and testability, by hiding the information required for a method to get its job done, by introducing non-determinism, or by promoting extensive usage of side effects. Functions that read or modify mutable global state are inherently impure.
 
-For example, it is hard to reason about the following code, which depends on a globally accessible property:
+For example, it is hard to reason about the following code, which depends on a globally accessible property:  
 ```
 if (!SmartHomeSettings.CostSavingEnabled) { _swimmingPoolController.HeatWater(); }
-```
+```    
 What if the HeatWater() method doesn’t get called when we are sure it should have been? Since any part of the application might have changed the CostSavingEnabled value, we must find and analyze all the places modifying that value in order to find out what’s wrong. Also, as we’ve already seen, it is not possible to set some static properties for testing purposes (e.g., DateTime.Now, or Environment.MachineName; they are read-only, but still non-deterministic).
 
-On the other hand, immutable and deterministic global state is totally OK. In fact, there’s a more familiar name for this — a constant. Constant values like Math.PI do not introduce any non-determinism, and, since their values cannot be changed, do not allow any side effects:
+On the other hand, immutable and deterministic global state is totally OK. In fact, there’s a more familiar name for this — a constant. Constant values like Math.PI do not introduce any non-determinism, and, since their values cannot be changed, do not allow any side effects:  
 ```
 double Circumference(double radius) { return 2 * Math.PI * radius; } // Still a pure function!
-```
+```  
 
 ## Singletons
 Essentially, the Singleton pattern is just another form of the global state. Singletons promote obscure APIs that lie about real dependencies and introduce unnecessarily tight coupling between components. They also violate the Single Responsibility Principle because, in addition to their primary duties, they control their own initialization and lifecycle.
 
-Singletons can easily make unit tests order-dependent because they carry state around for the lifetime of the whole application or unit test suite. Have a look at the following example:
+Singletons can easily make unit tests order-dependent because they carry state around for the lifetime of the whole application or unit test suite. Have a look at the following example:  
 ```
 User GetUser(int userId)
 {
@@ -387,7 +388,7 @@ User GetUser(int userId)
     }
     return user;
 }
-```
+```  
 In the example above, if a test for the cache-hit scenario runs first, it will add a new user to the cache, so a subsequent test of the cache-miss scenario may fail because it assumes that the cache is empty. To overcome this, we’ll have to write additional teardown code to clean the UserCache after each unit test run.
 
 Using Singletons is a bad practice that can (and should) be avoided in most cases; however, it is important to distinguish between Singleton as a design pattern, and a single instance of an object. In the latter case, the responsibility of creating and maintaining a single instance lies with the application itself. Typically, this is handed with a factory or Dependency Injection container, which creates a single instance somewhere near the “top” of the application (i.e., closer to an application entry point) and then passes it to every object that needs it. This approach is absolutely correct, from both testability and API quality perspectives.
@@ -395,7 +396,7 @@ Using Singletons is a bad practice that can (and should) be avoided in most case
 ## The `new` Operator
 Newing up an instance of an object in order to get some job done introduces the same problem as the Singleton anti-pattern: unclear APIs with hidden dependencies, tight coupling, and poor testability.
 
-For example, in order to test whether the following loop stops when a 404 status code is returned, the developer should set up a test web server:
+For example, in order to test whether the following loop stops when a 404 status code is returned, the developer should set up a test web server:    
 ```
 using (var client = new HttpClient())
 {
@@ -406,12 +407,12 @@ using (var client = new HttpClient())
         // Process the response and update the uri...
     } while (response.StatusCode != HttpStatusCode.NotFound);
 }
-```
-However, sometimes new is absolutely harmless: for example, it is OK to create simple entity objects:
+```    
+However, sometimes new is absolutely harmless: for example, it is OK to create simple entity objects:    
 ```
 var person = new Person("John", "Doe", new DateTime(1970, 12, 31));
-```
-It is also OK to create a small, temporary object that does not produce any side effects, except to modify their own state, and then return the result based on that state. In the following example, we don’t care whether Stack methods were called or not — we just check if the end result is correct:
+```  
+It is also OK to create a small, temporary object that does not produce any side effects, except to modify their own state, and then return the result based on that state. In the following example, we don’t care whether Stack methods were called or not — we just check if the end result is correct:  
 ```
 string ReverseString(string input)
 {
@@ -429,12 +430,12 @@ string ReverseString(string input)
     }
     return result;
 }
-```
+```  
 ## Static Methods
 
 Static methods are another potential source of non-deterministic or side-effecting behavior. They can easily introduce tight coupling and make our code untestable.
 
-For example, to verify the behavior of the following method, unit tests must manipulate environment variables and read the console output stream to ensure that the appropriate data was printed:
+For example, to verify the behavior of the following method, unit tests must manipulate environment variables and read the console output stream to ensure that the appropriate data was printed:  
 ```
 void CheckPathEnvironmentVariable()
 {
@@ -450,11 +451,11 @@ void CheckPathEnvironmentVariable()
     }
 
 }
-```
-However, pure static functions are OK: any combination of them will still be a pure function. For example:
+```  
+However, pure static functions are OK: any combination of them will still be a pure function. For example:  
 ```
 double Hypotenuse(double side1, double side2) { return Math.Sqrt(Math.Pow(side1, 2) + Math.Pow(side2, 2)); }
-```
+```  
 ## Conclusion
 
 Obviously, writing testable code requires some discipline, concentration, and extra effort. But software development is a complex mental activity anyway, and we should always be careful, and avoid recklessly throwing together new code from the top of our heads.

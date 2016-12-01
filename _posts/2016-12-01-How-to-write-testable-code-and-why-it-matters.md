@@ -315,7 +315,7 @@ public void ActuateLights(bool motionDetected, Action turnOn, Action turnOff)
         turnOff(); // Invoking a delegate: no tight coupling anymore
     }
 }
-  ```    
+  ```      
 This is a more functional-flavored solution than the classic object-oriented Dependency Injection approach we’ve seen before; however, it lets us achieve the same result with less code, and more expressiveness, than Dependency Injection. It is no longer necessary to implement a class that conforms to an interface in order to supply SmartHomeController with the required functionality; instead, we can just pass a function definition. Higher-order functions can be thought of as another way of implementing Inversion of Control.
 
 Now, to perform an interaction-based unit test of the resulting method, we can pass easily verifiable fake actions into it:  
@@ -436,7 +436,7 @@ string ReverseString(string input)
 Static methods are another potential source of non-deterministic or side-effecting behavior. They can easily introduce tight coupling and make our code untestable.
 
 For example, to verify the behavior of the following method, unit tests must manipulate environment variables and read the console output stream to ensure that the appropriate data was printed:  
-  ```  
+  ```
 void CheckPathEnvironmentVariable()
 {
 
@@ -451,7 +451,7 @@ void CheckPathEnvironmentVariable()
     }
 
 }
-  ```    
+  ```  
 However, pure static functions are OK: any combination of them will still be a pure function. For example:  
   ```  
 double Hypotenuse(double side1, double side2) { return Math.Sqrt(Math.Pow(side1, 2) + Math.Pow(side2, 2)); }

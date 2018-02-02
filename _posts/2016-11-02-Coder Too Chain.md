@@ -16,6 +16,10 @@ tags: [Tech]
 * [Remote Desktop Manager](http://remotedesktopmanager.com/)  
 * [Winscp](https://winscp.net/)
 
+## Debugging Tools  
+* [Postman](https://www.getpostman.com/)
+* [Fiddler](https://www.telerik.com/fiddler)
+
 ## Others  
 * [VMWare](http://www.vmware.com/)
 

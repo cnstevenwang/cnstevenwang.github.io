@@ -50,7 +50,22 @@ We can see this configuration class would only be activated if the KafkaTemplate
 
 Conditional annotations can also be used at the bean definition level, we can see a couple of them in the above example: @ConditionalOnMissingBean only registers the new component in absence of the required bean type or name and @ConditionalOnProperty can be leveraged to create a bean based on the presence of some property definition.
 
-Spring provides plenty of conditional annotations out-of-the-box, all of them well documented within its [reference documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-developing-auto-configuration.html) and with mostly self-explanatory names.
+Spring provides plenty of conditional annotations out-of-the-box, all of them well documented within its [reference documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-developing-auto-configuration.html) and with mostly self-explanatory names:
+
+```
+    @ConditionalOnClass
+    @ConditionalOnMissingBean
+    @ConditionalOnBean
+    @ConditionalOnJava
+    @ConditionalOnJndi
+    @ConditionalOnMissingClass
+    @ConditionalOnExpression
+    @ConditionalOnNotWebApplication
+    @ConditionalOnWebApplication
+    @ConditionalOnProperty
+    @ConditionalOnResource
+    @ConditionalOnSingleCandidate
+```
 
 If these conditions in reference are not enough for our use case, developers have the ability to create their own custom conditions, extending the SpringBootCondition class and using it with the @Conditional annotation.
 

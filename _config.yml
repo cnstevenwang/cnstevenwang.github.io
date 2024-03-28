@@ -7,8 +7,7 @@ title: "Steven Wang`s World - 记录 | 思考 "
 description: ""
 email: mail@steven.wang
 logo: "/assets/images/ed_logo.png"
-cover: "/assets/images/desktop.png "
-wechat: "微信:oulaoula"
+cover: "/assets/images/desktop.png"
 name: 'Steven Wang'
 author: 'Steven Wang'
 author_image: "/assets/images/author.png"
@@ -18,10 +17,6 @@ baseurl: ""
 
 # social icons and sharing options
 social:
-  - icon:	weibo
-    url:	http://weibo.com/netols
-    desc: Connect with me weibo
-
   - icon:	github
     url:	https://github.com/cnstevenwang
     desc:	Fork me on github

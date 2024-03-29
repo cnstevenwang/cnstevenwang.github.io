@@ -14,6 +14,7 @@ able to enjoy the out-of-the-box experience when using feature-rich themes.
 To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
 Jekyll site. The following is a list of targets:
 
+
 ```shell
 .
 ├── _config.yml

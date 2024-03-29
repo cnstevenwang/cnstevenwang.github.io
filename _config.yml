@@ -12,7 +12,7 @@ name: 'Steven Wang'
 author: 'Steven Wang'
 author_image: "/assets/images/author.png"
 paginate:	15
-url: "http://steven.wang" # the base hostname & protocol for your site
+url: "https://steven.wang" # the base hostname & protocol for your site
 baseurl: ""
 
 # social icons and sharing options

@@ -5,7 +5,7 @@ tags: [Tech]
 # Essential Software  
 
 ## Editor  
-* [Visual Studio Code](http://code.visualstudio.com/)  
+* [Visual Studio Code](https://code.visualstudio.com/)  
 * [Sublime](https://www.sublimetext.com/)
 
 ## SourceControl  
@@ -13,7 +13,7 @@ tags: [Tech]
 * [Git Kraken](https://www.gitkraken.com/)
 
 ## Ops(运维)  
-* [Remote Desktop Manager](http://remotedesktopmanager.com/)  
+* [Remote Desktop Manager](https://remotedesktopmanager.com/)  
 * [Winscp](https://winscp.net/)
 
 ## Debugging Tools  
@@ -21,7 +21,7 @@ tags: [Tech]
 * [Fiddler](https://www.telerik.com/fiddler)
 
 ## Others  
-* [VMWare](http://www.vmware.com/)
+* [VMWare](https://www.vmware.com/)
 
 ## 分系统
 * Windows

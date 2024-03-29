@@ -1,5 +1,6 @@
 ---
-tags: [test 测试 单元测试]
+tags: [test,测试,单元测试]
+categories: [tech]
 ---
 Unit testing is an essential instrument in the toolbox of any serious software developer. However, it can sometimes be quite difficult to write a good unit test for a particular piece of code. Having difficulty testing their own or someone else’s code, developers often think that their struggles are caused by a lack of some fundamental testing knowledge or secret unit testing techniques.
 

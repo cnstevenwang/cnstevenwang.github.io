@@ -1,5 +1,6 @@
 ﻿---
-tags: [Tech]
+tags: [tools]
+categories: [tech]
 ---
 
 # Essential Software  

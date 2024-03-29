@@ -1,5 +1,6 @@
 ---
-tags: [tech sql]
+tags: [concept,sql]
+categories: [tech]
 ---
 
 ## What's an Ad Hoc Query? 

@@ -1,11 +1,21 @@
-_site/*
-_theme_packages/*
+# Bundler cache
+.bundle
+vendor
+Gemfile.lock
 
-Thumbs.db
-.DS_Store
-.swp
+# Jekyll cache
+.jekyll-cache
+_site
 
-!.gitkeep
+# RubyGems
+*.gem
 
-.rbenv-version
-.rvmrc
+# NPM dependencies
+node_modules
+package-lock.json
+
+# IDE configurations
+.idea
+
+# Misc
+assets/js/dist

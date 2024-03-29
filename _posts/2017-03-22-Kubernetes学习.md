@@ -1,1 +1,0 @@
-[Kubernetes实践/架构真实解析](http://www.jianshu.com/p/40d171c3b950)

@@ -3,6 +3,11 @@
 icon: fas fa-info-circle
 order: 4
 ---
+> A coder, build the world in code.
+{: .prompt-tip }
+
+> A loster, lost in the real world.
+{: .prompt-tip }
 
 ```js
 const coder = {
@@ -29,8 +34,3 @@ const coder = {
 
 console.log(JSON.stringify(coder))
 ```
-> A coder, build the world in code.
-{: .prompt-tip }
-
-> A loster, lost in the real world.
-{: .prompt-tip }
